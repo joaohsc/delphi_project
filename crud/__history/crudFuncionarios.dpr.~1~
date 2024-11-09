@@ -1,0 +1,14 @@
+program crudFuncionarios;
+
+uses
+  Vcl.Forms,
+  crud in 'crud.pas' {Form1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

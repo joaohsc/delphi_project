@@ -1,0 +1,26 @@
+object DM: TDM
+  Height = 480
+  Width = 640
+  object connection: TFDConnection
+    Params.Strings = (
+      'ConnectionDef=EMPLOYEE')
+    Connected = True
+    LoginPrompt = False
+    Left = 112
+    Top = 88
+  end
+  object employeesDS: TDataSource
+    DataSet = employees
+    Left = 184
+    Top = 256
+  end
+  object employees: TFDTable
+    Active = True
+    IndexFieldNames = 'CUST_NO'
+    Connection = connection
+    ResourceOptions.AssignedValues = [rvEscapeExpand]
+    TableName = 'CUSTOMER'
+    Left = 280
+    Top = 128
+  end
+end

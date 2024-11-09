@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/11/08 19:49:14.000.713,=D:\radproj\Unit3.pas</Transaction>
+    <Transaction>2024/11/08 19:49:34.000.834,D:\radproj\Unit3.dfm=D:\radproj\projetoEsigma\mensageiro\mensageiro.dfm</Transaction>
+    <Transaction>2024/11/08 19:49:34.000.834,D:\radproj\Unit3.pas=D:\radproj\projetoEsigma\mensageiro\mensageiro.pas</Transaction>
+    <Transaction>2024/11/08 19:49:43.000.258,D:\radproj\Project1.dproj=D:\radproj\projetoEsigma\mensageiro\mensageiroProj.dproj</Transaction>
+    <Transaction>2024/11/08 19:53:49.000.340,=D:\radproj\projetoEsigma\mensageiro\Unit4.pas</Transaction>
+    <Transaction>2024/11/08 19:54:02.000.325,D:\radproj\projetoEsigma\mensageiro\Unit4.pas=D:\radproj\projetoEsigma\mensageiro\receberMensagem.pas</Transaction>
+    <Transaction>2024/11/08 19:54:02.000.325,D:\radproj\projetoEsigma\mensageiro\Unit4.dfm=D:\radproj\projetoEsigma\mensageiro\receberMensagem.dfm</Transaction>
+  </Transactions>
+</BorlandProject>
