@@ -38,8 +38,10 @@ end;
 
 procedure TreceberForm.confirmBtnClick(Sender: TObject);
 begin
-  showmessage('O usuário confirmou.');
+  confirm := true;
+
   enviarForm.Show;
+
   self.Close;
 end;
 

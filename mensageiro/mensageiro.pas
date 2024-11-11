@@ -13,6 +13,7 @@ type
     StaticText1: TStaticText;
     StaticText2: TStaticText;
     procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -31,6 +32,18 @@ begin
   mensagem:= messageSent.Text;
   receberForm.Show;
   enviarForm.Hide;
+
+end;
+
+procedure TenviarForm.FormCreate(Sender: TObject);
+begin
+
+  if receberForm.confirm then
+  begin
+    receberForm.Close;
+    showmessage('O usuário confirmou.');
+    receberForm.confirm := false;
+  end;
 
 end;
 

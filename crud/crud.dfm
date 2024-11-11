@@ -14,15 +14,15 @@ object Form1: TForm1
   TextHeight = 15
   object DBNavigator1: TDBNavigator
     Left = 16
-    Top = 41
+    Top = 49
     Width = 510
     Height = 32
     DataSource = DM.employeesDS
     TabOrder = 0
   end
   object DBGrid1: TDBGrid
-    Left = 16
-    Top = 96
+    Left = 8
+    Top = 103
     Width = 993
     Height = 657
     DataSource = DM.employeesDS

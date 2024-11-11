@@ -10,12 +10,13 @@ object enviarForm: TenviarForm
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnActivate = FormCreate
   TextHeight = 15
   object messageSent: TEdit
     Left = 168
     Top = 160
     Width = 281
-    Height = 65
+    Height = 23
     TabOrder = 0
     TextHint = 'Digite sua mensagem...'
   end

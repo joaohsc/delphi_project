@@ -8,25 +8,20 @@ uses
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.VCLUI.Wait,
   Data.DB, FireDAC.Comp.Client, Data.FMTBcd, Data.SqlExpr, FireDAC.Phys.IB,
   FireDAC.Phys.IBDef, FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf,
-  FireDAC.DApt, FireDAC.Comp.DataSet;
+  FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Phys.SQLite,
+  FireDAC.Phys.SQLiteDef, FireDAC.Stan.ExprFuncs,
+  FireDAC.Phys.SQLiteWrapper.Stat;
 
 type
   TDM = class(TDataModule)
-    connection: TFDConnection;
     employeesDS: TDataSource;
     employees: TFDTable;
-    employeesCUST_NO: TFDAutoIncField;
-    employeesCUSTOMER: TStringField;
-    employeesCONTACT_FIRST: TStringField;
-    employeesCONTACT_LAST: TStringField;
-    employeesPHONE_NO: TStringField;
-    employeesADDRESS_LINE1: TStringField;
-    employeesADDRESS_LINE2: TStringField;
-    employeesCITY: TStringField;
-    employeesSTATE_PROVINCE: TStringField;
-    employeesCOUNTRY: TStringField;
-    employeesPOSTAL_CODE: TStringField;
-    employeesON_HOLD: TStringField;
+    createTable: TFDQuery;
+    connection: TFDConnection;
+    employeescodigo: TIntegerField;
+    employeesnome: TWideStringField;
+    employeescpf: TWideStringField;
+    employeesdataNascimento: TWideStringField;
   private
     { Private declarations }
   public

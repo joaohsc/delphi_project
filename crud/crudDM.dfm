@@ -1,14 +1,6 @@
 object DM: TDM
   Height = 480
   Width = 640
-  object connection: TFDConnection
-    Params.Strings = (
-      'ConnectionDef=EMPLOYEE')
-    Connected = True
-    LoginPrompt = False
-    Left = 112
-    Top = 88
-  end
   object employeesDS: TDataSource
     DataSet = employees
     Left = 184
@@ -16,74 +8,58 @@ object DM: TDM
   end
   object employees: TFDTable
     Active = True
-    IndexFieldNames = 'CUST_NO'
+    IndexFieldNames = 'codigo'
     Connection = connection
     ResourceOptions.AssignedValues = [rvEscapeExpand]
-    TableName = 'CUSTOMER'
+    TableName = 'funcionarios'
     Left = 280
     Top = 128
-    object employeesCUST_NO: TFDAutoIncField
-      FieldName = 'CUST_NO'
-      Origin = 'CUST_NO'
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      IdentityInsert = True
-    end
-    object employeesCUSTOMER: TStringField
-      FieldName = 'CUSTOMER'
-      Origin = 'CUSTOMER'
+    object employeescodigo: TIntegerField
+      FieldName = 'codigo'
+      Origin = 'codigo'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
       Required = True
-      Size = 25
     end
-    object employeesCONTACT_FIRST: TStringField
-      FieldName = 'CONTACT_FIRST'
-      Origin = 'CONTACT_FIRST'
-      Size = 15
+    object employeesnome: TWideStringField
+      DisplayWidth = 20
+      FieldName = 'nome'
+      Origin = 'nome'
+      Required = True
+      Size = 200
     end
-    object employeesCONTACT_LAST: TStringField
-      FieldName = 'CONTACT_LAST'
-      Origin = 'CONTACT_LAST'
+    object employeescpf: TWideStringField
+      FieldName = 'cpf'
+      Origin = 'cpf'
+      Required = True
+      Size = 11
     end
-    object employeesPHONE_NO: TStringField
-      FieldName = 'PHONE_NO'
-      Origin = 'PHONE_NO'
+    object employeesdataNascimento: TWideStringField
+      FieldName = 'dataNascimento'
+      Origin = 'dataNascimento'
+      Required = True
+      Size = 10
     end
-    object employeesADDRESS_LINE1: TStringField
-      FieldName = 'ADDRESS_LINE1'
-      Origin = 'ADDRESS_LINE1'
-      Size = 30
-    end
-    object employeesADDRESS_LINE2: TStringField
-      FieldName = 'ADDRESS_LINE2'
-      Origin = 'ADDRESS_LINE2'
-      Size = 30
-    end
-    object employeesCITY: TStringField
-      FieldName = 'CITY'
-      Origin = 'CITY'
-      Size = 25
-    end
-    object employeesSTATE_PROVINCE: TStringField
-      FieldName = 'STATE_PROVINCE'
-      Origin = 'STATE_PROVINCE'
-      Size = 15
-    end
-    object employeesCOUNTRY: TStringField
-      FieldName = 'COUNTRY'
-      Origin = 'COUNTRY'
-      Size = 15
-    end
-    object employeesPOSTAL_CODE: TStringField
-      FieldName = 'POSTAL_CODE'
-      Origin = 'POSTAL_CODE'
-      Size = 12
-    end
-    object employeesON_HOLD: TStringField
-      AutoGenerateValue = arDefault
-      FieldName = 'ON_HOLD'
-      Origin = 'ON_HOLD'
-      FixedChar = True
-      Size = 1
-    end
+  end
+  object createTable: TFDQuery
+    Connection = connection
+    SQL.Strings = (
+      'CREATE TABLE IF NOT EXISTS funcionarios ('
+      '    codigo INTEGER PRIMARY KEY UNIQUE NOT NULL,'
+      '    nome TEXT(200) NOT NULL,'
+      '    cpf TEXT(11) UNIQUE NOT NULL,'
+      '    dataNascimento TEXT(10) NOT NULL'
+      ');')
+    Left = 520
+    Top = 136
+  end
+  object connection: TFDConnection
+    Params.Strings = (
+      'Database=D:\radproj\projetoEsigma\crud\db\funcionariosDB.db'
+      'LockingMode=Normal'
+      'DriverID=SQLite')
+    Connected = True
+    LoginPrompt = False
+    Left = 112
+    Top = 88
   end
 end
